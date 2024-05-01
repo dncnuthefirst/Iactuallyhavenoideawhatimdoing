@@ -16,16 +16,28 @@
 </head>
 <body>
 
-<h1>Nothing here for now because i suck at html and javascript </h1>
+<h1>Helo its dncnu teh dum welcome!!!!!</h1>
 <div id="bordrColor">
     <br>
-    <p style="font-size: 30px;">Its a ROBUX earnings percentage calculator!!!</p>
-    <p>Enter the robux stuff:<input type="number" id="Idk"> <input type="button" value="Done?" onclick="showNumber()"></p>
+    <p style="font-size: 25px;">Thats me first product!!!</p>
+    <p style="font-size: 20px;">Its a ROBUX earnings percentage calculator!!!</p>
+    <p>Enter the robux stuff:<input type="number" style="background-color: rgb(223, 223, 0);" id="Idk"> <input type="button" value="Done?" onclick="showNumber()" style="background-color: rgb(223, 223, 0);"></p>
 
     <p id="NumbrReal">The robux is, uhhh idk</p>
+
+</div>
+    <p></p>
+        <div id="bordrColor" style="width: 16%; height: 200px;">
+            <p>Test your rng!!!<br></p>
+            <input type="button" id = "CuteButtonBoi" value="^_^" style="background-color: rgb(223, 223, 0); width: 100%; height: 15%;" onmousedown="StartClick(); rollnumbr();" onmouseup="StopClick()">
+            <h3><u>You rolled:</u> </h3>
+            <p id="Rolling"><i></p>
+        </div>
+    <p></p>
 </div>
 
 <script>
+    var debounce = false;
 function showNumber() {
     var TehNumbr = document.getElementById("Idk").value;
     if (TehNumbr.trim() === '') {
@@ -40,6 +52,62 @@ function showNumber() {
             
         }else{document.getElementById("NumbrReal").innerHTML = "The robux you need to sell for to get the 70% is " + rounded + " Robux"; // Display the funny results
         }
+    }
+}
+
+function StartClick() {document.getElementById("CuteButtonBoi").value = ">_<";}
+function StopClick() {setTimeout(() => {document.getElementById("CuteButtonBoi").value = "^_^";}, 200);}
+
+function rollnumbr() {
+    if (debounce == false){
+        debounce = true
+        console.log("Please kill me")
+    var chance = Math.random(2,4);
+    var type;
+    var colorz = "rgb(223, 223, 0)";
+    document.getElementById("Rolling").innerHTML = "Rolling..."
+    document.getElementById("Rolling").style.color = colorz;
+
+    if (chance < 0.5) {
+        type = "Borin Common (1/2)";
+        colorz = "rgb(60,60,60)";
+    } else if (chance < 0.75) {
+        type = "Uncommon (1/4)";
+     colorz = "rgb(100,100,100)";
+    } else if (chance < 0.875) {
+        type = "Rare (1/8)";
+        colorz = "rgb(0,155,0)";
+    } else if (chance < 0.9375) {
+        type = "Very Epic (1/16)";
+        colorz = "rgb(100,50,50)";
+    } else if (chance < 0.96875) {
+        type = "Mythic (1/32)";
+        colorz = "rgb(100,100,0)";
+    } else if (chance < 0.984375) {
+        type = "Cool Fabled (1/64)";
+        colorz = "rgb(0,200,200)";
+    } else if (chance < 0.9921875) {
+        type = "Legendary (1/128)";
+        colorz = "rgb(200,0,200)";
+    } else if (chance < 0.99609375) {
+        type = "No way a Mythical (1/256)";
+        colorz = "rgb(255,0,255)";
+    } else if (chance < 0.998046875) {
+        type = "WOAH SCREENSHOT IT TO ME ITS A DIVINE (1/512)";
+        colorz = "rgb(233,233,233)";
+    } else {
+        type = "(You are the luckiest man to ever exist) Immortal (1/1024)";
+        colorz = "rgb(255,255,255)";
+    }
+
+    setTimeout(function() {
+        document.getElementById("Rolling").innerHTML = "Type: " + type;
+        document.getElementById("Rolling").style.color = colorz;
+        
+    }, 300); // Funky code
+    setTimeout(function() {
+            debounce = false; // Reset debounce to false after 200 milliseconds
+        }, 500);
     }
 }
 
@@ -171,7 +239,7 @@ function showNumber() {
             <br>
             <br>
             <br>
-            <p style="color:rgb(206, 0, 0);">bad at javascript for now...</p>
+            <p style="color:rgb(206, 0, 0);">bad at javascript for now >:]...</p>
         </p>
 </body>
 </html>
