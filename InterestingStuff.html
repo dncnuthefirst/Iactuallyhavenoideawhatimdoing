@@ -32,7 +32,14 @@ function showNumber() {
         document.getElementById("NumbrReal").innerHTML = "Please enter a valid number >:("; // Ok  you are just plain lazy
     } else if (!isNaN(TehNumbr)) { // THE FRENCH DEFENSE!!!
         var percentage = parseFloat(TehNumbr) / 0.7; // Calculate the goddamn percentage
-        document.getElementById("NumbrReal").innerHTML = "The robux you need to sell for to get the 70% is " + Math.round(percentage) + " Robux"; // Display the funny results
+        var rounded = Math.round(percentage)
+        if (rounded == 69){
+            document.getElementById("NumbrReal").innerHTML = "The robux you need to sell for to get the 70% is " + rounded + " Robux (nice)"; // Display the funny results
+        }else if(rounded > 1000000000000000000){
+            document.getElementById("NumbrReal").innerHTML = "Bro why u torture me I hate you"
+            
+        }else{document.getElementById("NumbrReal").innerHTML = "The robux you need to sell for to get the 70% is " + rounded + " Robux"; // Display the funny results
+        }
     }
 }
 
